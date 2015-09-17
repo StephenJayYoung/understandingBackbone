@@ -9,9 +9,10 @@
     },
 
     initialize: function(){
-      _.bindAll(this, 'render', 'addItem'); // every function that uses 'this' as the current object should be in here
+      _.bindAll(this, 'render', 'addItem', 'deleteItem'); // every function that uses 'this' as the current object should be in here
 
       this.counter = 0  ; // total number of items added thus far
+      this.deleter = 5;
       this.render();
     },
 
@@ -24,7 +25,13 @@
     addItem: function(){
       this.counter++;
       $('ul', this.el).append("<li>Count"+this.counter+"</li>");
+    },
+
+    deleteItem: function(){
+      this.deleter--;
+      $('ul', this.el).append("<li>Delete"+this.deleter+"</li>");
     }
+
   });
 
   var listView = new ListView();
