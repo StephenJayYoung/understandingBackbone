@@ -5,20 +5,19 @@
 //
     events: {
       'click button#add': 'addItem',
-      'click button#delete': 'deleteItem'
+      'click button#delete': 'subtractItem'
     },
 
     initialize: function(){
-      _.bindAll(this, 'render', 'addItem', 'deleteItem'); // every function that uses 'this' as the current object should be in here
+      _.bindAll(this, 'render', 'addItem', 'subtractItem'); // every function that uses 'this' as the current object should be in here
 
       this.counter = 0  ; // total number of items added thus far
-      this.deleter = 5;
       this.render();
     },
 
     render: function(){
       $(this.el).append("<button id='add'>Add the thing</button>");
-      $(this.el).append("<button id='delete'>Delete the thing</button>");
+      $(this.el).append("<button id='delete'>Subtract the thing</button>");
       $(this.el).append("<ul></ul>");
     },
 
@@ -27,10 +26,12 @@
       $('ul', this.el).append("<li>Count"+this.counter+"</li>");
     },
 
-    deleteItem: function(){
+    subtractItem: function(){
       this.counter--;
-      $('ul', this.el).append("<li>Delete"+this.counter+"</li>");
+      $('ul', this.el).append("<li>Subtract"+this.counter+"</li>");
     }
+
+
 
   });
 
