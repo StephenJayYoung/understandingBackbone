@@ -28,8 +28,8 @@
     },
 
     deleteItem: function(){
-      this.deleter--;
-      $('ul', this.el).append("<li>Delete"+this.deleter+"</li>");
+      this.counter--;
+      $('ul', this.el).append("<li>Delete"+this.counter+"</li>");
     }
 
   });
