@@ -1,3 +1,4 @@
+/*global Backbone, jQuery, _, ENTER_KEY */
 var app = app || {};
 
 (function ($) {
@@ -42,7 +43,7 @@ var app = app || {};
       // Suppresses 'add' events with {reset: true} and prevents the app view
       // from being re-rendered for every model. Only renders when the 'reset'
       // event is triggered at the end of the fetch.
-      // app.todos.fetch({reset: true});
+      app.todos.fetch({reset: true});
     },
 
     // Re-rendering the App just means refreshing the statistics -- the rest
